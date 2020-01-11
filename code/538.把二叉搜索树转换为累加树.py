@@ -44,12 +44,26 @@ class Solution:
     def __init__(self):
         self.temp=0
     def convertBST(self, root: TreeNode) -> TreeNode:
+        '''
         if root is None:
             return None
         self.convertBST(root.right)
         self.temp+=root.val
         root.val=self.temp
         self.convertBST(root.left)
+        return root
+    ''''
+        node=root
+        stack=[]
+        while stack or node:
+            while node:
+                stack.append(node)
+                node=node.right
+            node=stack.pop()
+            self.temp+=node.val
+            node.val=self.temp
+
+            node=node.left
         return root
         
 # @lc code=end
