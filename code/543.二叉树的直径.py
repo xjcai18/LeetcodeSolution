@@ -58,7 +58,7 @@ class Solution:
         l=self.depth(root.left)
         r=self.depth(root.right)
         self.sum=max(self.sum,l+r)
-        return max(l,r)+1
+        return max(l,r)+1#这个是求最大深度的返回值
 
         
         
