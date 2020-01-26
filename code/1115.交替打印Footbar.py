@@ -15,7 +15,7 @@ def seller():
     for i in range(3):
         s_seller.acquire()
         print("开门")
-        print("关门")
+        print("关门")3
         print("*"*20)
         s_driver.release()
 
