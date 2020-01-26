@@ -31,6 +31,7 @@
 # @lc code=start
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
+        '''
         n = len(nums)
         #递归终止条件
         if n == 1:
@@ -54,8 +55,23 @@ class Solution:
             max_r = max(tmp, max_r)
         #返回三个中的最大值
         return max(max_right,max_left,max_l+max_r)
+        '''
 
-        
+        '''
+        res=nums[0]
+        ans=0
+        for i in nums:
+            if ans>=0:
+                ans+=i
+            else:
+                ans=i
+            res=max(res,ans)
+
+        return res
+        '''
+        for i in range(len(nums)):
+            nums[i]=max(nums[i-1]+nums[i],nums[i])
+        return max(nums)
         
 
         
