@@ -56,13 +56,15 @@ class Solution:
             path.pop()
     '''
     def subsets(self, nums: List[int]) -> List[List[int]]:
+        '''
         path=[]
         result=[]
         size=len(nums)
-        for i in range(size+1)
+        for i in range(size+1)：
             self.backtracking(nums,0,size,path,result,i)#循环遍历所有的
         return result
-
+        '''
+        '''
     def backtracking(self,nums,start,size,path,result,length):#增加一个参数length来表示层数，代码就和之前的一样了
     #中止条件是什么呢，包含不同元素
         if len(path)==length:
@@ -72,8 +74,19 @@ class Solution:
                 continue
             path.append(nums[i])
             self.backtracking(nums,i+1,size,path,result,length)
-            path.pop()
-
+            path.pop()''
+            '''
+        
+        result=[]
+        size=1<<len(nums)
+        for i in range(size):
+            path=[]
+            for j in range(len(nums)):
+                if i>>j &1:#把 i 算术右移 j 位，然后检测最低位是否为1
+#返回值为1则最低位就是1，为0则是0 
+                    path.append(nums[j])
+            result.append(path)
+        return result
         
 # @lc code=end
 
